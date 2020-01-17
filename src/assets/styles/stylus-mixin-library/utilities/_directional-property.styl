@@ -1,0 +1,42 @@
+directional-property($property, $suffix, $values)
+	if length($values) > 0 && length($values) < 5
+		$newValues = value-count-4($values)
+		if $property && $suffix
+			if $suffix == radius
+				if $newValues[0] != null
+					{$property}-top-left-{$suffix} $newValues[0]
+				if $newValues[1] != null
+					{$property}-top-right-{$suffix} $newValues[1]
+				if $newValues[2] != null
+					{$property}-bottom-right-{$suffix} $newValues[2]
+				if $newValues[3] != null
+					{$property}-bottom-left-{$suffix} $newValues[3]
+			else
+				if $newValues[0] != null
+					{$property}-top-{$suffix} $newValues[0]
+				if $newValues[1] != null
+					{$property}-right-{$suffix} $newValues[1]
+				if $newValues[2] != null
+					{$property}-bottom-{$suffix} $newValues[2]
+				if $newValues[3] != null
+					{$property}-left-{$suffix} $newValues[3]
+		else if $property && !$suffix
+			if $newValues[0] != null
+				{$property}-top $newValues[0]
+			if $newValues[1] != null
+				{$property}-right $newValues[1]
+			if $newValues[2] != null
+				{$property}-bottom $newValues[2]
+			if $newValues[3] != null
+				{$property}-left $newValues[3]
+		else if !$property && !$suffix
+			if $newValues[0] != null
+				top $newValues[0]
+			if $newValues[1] != null
+				right $newValues[1]
+			if $newValues[2] != null
+				bottom $newValues[2]
+			if $newValues[3] != null
+				left $newValues[3]
+	else
+		error("Please enter exactly 1 or 2 or 3 or 4 values, they can be null, if you dont want to specify a certain value, but not more then 4 and no less then 1. 1,2,3 value rules apply to all property's, as for css padding/margin interpretation")

@@ -1,0 +1,21 @@
+hide-visually_($hide) {
+	if $hide == true {
+		border 0
+		clip rect(1px, 1px, 1px, 1px)
+		clip-path inset(100%)
+		size_(1px, 1px)
+		overflow hidden
+		padding_(0 0 0 0)
+		position_(absolute, null null null null)
+		white-space nowrap
+	} else if $hide == false {
+		clip auto
+		clip-path none
+		size_(auto, auto)
+		overflow visible
+		position_(static, nul, null null null)
+		white-space inherit
+	} else {
+		error('A value must be passed either true or false')
+	}
+}

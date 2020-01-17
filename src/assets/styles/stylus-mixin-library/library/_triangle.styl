@@ -1,0 +1,30 @@
+triangle_($direction, $width, $height, $color)
+	display block
+	border-style_(solid solid solid solid)
+	size_(0, 0)
+	if $direction == 'up'
+		border-color_(transparent transparent $color transparent)
+		border-width_(0 ($width / 2) $height ($width / 2))
+	else if $direction == 'up-right'
+		border-color_(transparent $color transparent transparent)
+		border-width_(0 $width $width 0)
+	else if $direction == 'right'
+		border-color_(transparent transparent transparent $color)
+		border-width_(($height / 2) 0 ($height / 2) $width)
+	else if $direction == 'down-right'
+		border-color_(transparent transparent $color transparent)
+		border-width_(0 0 $width $width)
+	else if $direction == 'down'
+		border-color_($color transparent transparent transparent)
+		border-width_($height ($width / 2) 0 ($width / 2))
+	else if $direction == 'down-left'
+		border-color_(transparent transparent transparent $color)
+		border-width_($width 0 0 $width)
+	else if $direction == 'left'
+		border-color_(transparent $color transparent transparent)
+		border-width_(($height / 2) $width ($height / 2) 0)
+	else if $direction == 'up-left'
+		border-color_($color transparent transparent transparent)
+		border-width_($width $width 0 0)
+	else
+		error("$direction parameter must be a value of this list: 'up', 'up-right', 'right', 'down-right', 'down', 'down-left', 'left', 'up-left'")

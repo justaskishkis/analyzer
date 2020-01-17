@@ -1,0 +1,25 @@
+{
+	"extends": "../tslint.json",
+	"rules": {
+		"directive-selector": [
+			true,
+			"attribute",
+			"companypre",
+			"camelCase"
+		],
+		"component-selector": [
+			true,
+			[
+				"element",
+				"attribute"
+			],
+			"companypre",
+			"kebab-case"
+		],
+		"pipe-naming": [
+			true,
+			"camelCase",
+			"companypre"
+		]
+	}
+}

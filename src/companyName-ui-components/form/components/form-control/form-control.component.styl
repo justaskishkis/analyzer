@@ -1,0 +1,24 @@
+@require 'base-config'
+
+:host.{cPre}form__control
+	border 1px solid bdcInputPrimary
+	border-radius bdrsPrimary
+	height hInput
+	line-height hInput
+	padding_(null spaceRightSm null spaceLeftSm)
+	font-weight fwPrimary
+	box-sizing border-box
+	color cFontPrimary
+	font-family ffPrimary
+	width 100%
+
+	&:focus
+		border-color cPrimary
+		box-shadow 0 0 4px 1px rgba(23,165,247,0.4)
+
+	&[disabled]
+		background bgcInputPrimaryDisabled
+		cursor text
+
+	&::placeholder
+		color cInputPlaceholder

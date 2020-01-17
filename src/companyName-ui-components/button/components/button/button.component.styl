@@ -1,0 +1,37 @@
+@require 'base-config'
+
+:host.{cPre}button
+	margin_(0 0 0 0)
+	outline none
+	cursor pointer
+	border none
+	-webkit-tap-highlight-color transparent
+	box-sizing border-box
+	position relative
+	z-index zLow1
+	display inline-block
+	white-space nowrap
+	text-decoration none
+	vertical-align baseline
+	text-align center
+	background-color transparent
+	border-radius bdrsPrimary
+	height hButton
+	line-height hButton
+
+	&[disabled]
+		opacity .5
+		cursor default
+
+	&--primary
+		padding_(0 spaceRightPrimary 0 spaceLeftPrimary)
+		background-color bgcButtonPrimary
+		border-radius bdrsPrimary
+		border 1px solid cPrimary
+		color cInverted
+
+		&:hover
+			background-color bgcButtonPrimaryHover
+
+	&--width-full
+		width 100%

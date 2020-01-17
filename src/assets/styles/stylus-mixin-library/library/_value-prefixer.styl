@@ -1,0 +1,9 @@
+value-prefixer_($property, $val, $vendorPrefixListOverride = $vendorPrefixList)
+	if $vendorPrefixListOverride
+		for $vendor in $vendorPrefixListOverride
+			{$property} unquote('-' + $vendor + '-' + $val)
+		{$property} $val
+	else
+		for $vendor in $vendorPrefixList
+			{$property} unquote('-' + $vendor + '-' + $val)
+		{$property} $val

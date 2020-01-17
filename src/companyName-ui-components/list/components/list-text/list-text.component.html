@@ -1,0 +1,15 @@
+<div class="companypre-list-text">
+	<ul class="companypre-list-text__item-list">
+		<li
+			(click)="emitItem(item)"
+			*ngFor="let item of data"
+			class="companypre-list-text__item">
+			<span class="companypre-list-text__icon">
+				<img
+					src="./assets/images/svg/check-1.svg"
+					alt="{{ item.name }}">
+			</span>
+			{{ item.name }}
+		</li>
+	</ul>
+</div>

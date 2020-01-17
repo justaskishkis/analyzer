@@ -1,0 +1,13 @@
+<div class="companypre-form__field">
+	<div
+		*ngIf="!!label"
+		[ngClass]="{
+			'companypre-form__label--required': required
+		}"
+		class="companypre-form__label">
+		{{ label }}
+	</div>
+	<div class="companypre-form__element">
+		<ng-content></ng-content>
+	</div>
+</div>

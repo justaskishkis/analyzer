@@ -1,0 +1,32 @@
+@require 'base-config'
+
+.{cPre}list-text
+	padding-top spaceTopSm
+
+	&:first-child
+	&--no-space-top
+		padding-top 0
+
+	&__item-list
+		display block
+
+	&__item
+		margin-top spaceTopSm
+		padding_(4px null 4px spaceLeftLg)
+		position_(relative, null null null null)
+		z-index zLow1
+		color cFontPrimary
+
+		&:first-child
+			margin-top 0
+
+		&:hover
+			background-color cInfo
+			cursor pointer
+
+		strong
+			color cFontPrimary
+
+	&__icon
+		position_(absolute, 2px null null 0)
+		z-index zLow1

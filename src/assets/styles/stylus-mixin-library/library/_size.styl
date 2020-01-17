@@ -1,0 +1,7 @@
+size_($width, $height)
+	if ($width || $width == 0 && $height || $height == 0) {
+		width $width
+		height $height
+	} else {
+		error("Both values must be entered, else please just use non mixin approach, width 100px or height 100px")
+	}

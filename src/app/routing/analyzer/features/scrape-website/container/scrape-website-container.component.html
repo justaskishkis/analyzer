@@ -1,0 +1,135 @@
+<div class="apppre-grid-container apppre-grid-container--horizontal-spaces-primary apppre-scrape-website">
+	<div class="apppre-grid-row">
+		<div class="apppre-grid-col apppre-grid-col--6 apppre-scrape-website__form">
+			<div class="apppre-scrape-website__form">
+				<form
+					autocomplete="off"
+					[formGroup]="form"
+					(ngSubmit)="submit()">
+					<companypre-form-group>
+						<companypre-form-field
+							[label]="formLabelWebsiteUrl | translate"
+							[required]="true">
+							<input
+								[companypreDisableControl]="scrapeWebsiteLoading$ | async"
+								type="text"
+								formControlName="websiteUrl"
+								companypre-form-control />
+						</companypre-form-field>
+						<companypre-validation-message
+							[form]="form"
+							key="websiteUrl">
+						</companypre-validation-message>
+						<companypre-message
+							*ngIf="scrapeWebsiteFailed$ | async"
+							[mod]="'danger'"
+							[text]="'message.error.server-error' | translate"
+						></companypre-message>
+						<companypre-form-actions>
+							<button
+								[disabled]="scrapeWebsiteLoading$ | async"
+								type="submit"
+								companypre-button
+								[styleType]="'primary'">
+								{{ formButtonScrape | translate }}
+							</button>
+						</companypre-form-actions>
+					</companypre-form-group>
+				</form>
+			</div>
+		</div>
+		<div class="apppre-grid-col apppre-grid-col--6">
+			<h2>
+				{{ scrapingHistoryHeading | translate }}
+			</h2>
+			<div class="apppre-scrape-website__history">
+				<companypre-message
+					*ngIf="scrapingHistory && scrapingHistory.length === 0"
+					[mod]="'info'"
+					[text]="noScrapingHistoryMessage | translate"></companypre-message>
+				<companypre-list-text
+					(itemClicked)="handleHistoryItemClicked($event)"
+					[data]="scrapingHistory"
+					*ngIf="scrapingHistory && scrapingHistory.length > 0"></companypre-list-text>
+			</div>
+		</div>
+	</div>
+	<div class="apppre-grid-row apppre-scrape-website__results">
+		<div class="apppre-grid-col apppre-grid-col--12 apppre-grid-col--tablet-6 apppre-scrape-website__result">
+			<h2>
+				{{ uniqueTagListHeading | translate }}
+			</h2>
+			<div class="apppre-scrape-website__result-data">
+				<companypre-card
+					*ngIf="uniqueTagList"
+					[total]="total(uniqueTagList.length)">
+					<companypre-list-tags [data]="uniqueTagList"></companypre-list-tags>
+				</companypre-card>
+				<companypre-message
+					*ngIf="!uniqueTagList"
+					[mod]="'info'"
+					[text]="noDataText | translate"></companypre-message>
+			</div>
+		</div>
+		<div class="apppre-grid-col apppre-grid-col--12 apppre-grid-col--tablet-6 apppre-scrape-website__result">
+			<h2>
+				{{ mostUsedTagHeading | translate }}
+			</h2>
+			<div class="apppre-scrape-website__result-data">
+				<companypre-card
+					[total]="timesUsed(mostUsedTagList.timesUsed)"
+					*ngIf="mostUsedTagList">
+					<companypre-list-tags [data]="mostUsedTagList.tagList"></companypre-list-tags>
+				</companypre-card>
+				<companypre-message
+					*ngIf="!mostUsedTagList"
+					[mod]="'info'"
+					[text]="noDataText | translate"></companypre-message>
+			</div>
+		</div>
+		<div class="apppre-grid-col apppre-grid-col--12 apppre-scrape-website__result">
+			<h2>
+				{{ longestPathOrPathsFromRootHeading | translate }}
+			</h2>
+			<div class="apppre-scrape-website__result-data">
+				<companypre-card
+					[total]="longestPathStats(longestPath.tagList.length, longestPath.length)"
+					*ngIf="longestPath">
+					<div
+						class="apppre-scrape-website__result-data-item"
+						*ngFor="let item of longestPath.tagList">
+						<companypre-list-tags [data]="item"></companypre-list-tags>
+					</div>
+				</companypre-card>
+				<companypre-message
+					*ngIf="!longestPath"
+					[mod]="'info'"
+					[text]="noDataText | translate"></companypre-message>
+			</div>
+		</div>
+		<div class="apppre-grid-col apppre-grid-col--12 apppre-scrape-website__result">
+			<h2>
+				{{ longestPathOrPathsFromRootHeadingWithMostPopular | translate }}
+			</h2>
+			<div class="apppre-scrape-website__result-data">
+				<companypre-card
+					[total]="longestPathPopularStats(
+						longestPathWithMostPopularTag.tagList.length,
+						longestPathWithMostPopularTag.length,
+						longestPathWithMostPopularTag.timesUsed
+					)"
+					*ngIf="longestPathWithMostPopularTag">
+					<div
+						class="apppre-scrape-website__result-data-item"
+						*ngFor="let item of longestPathWithMostPopularTag.tagList">
+						<companypre-list-tags [data]="item"></companypre-list-tags>
+					</div>
+				</companypre-card>
+				<companypre-message
+					*ngIf="!longestPathWithMostPopularTag"
+					[mod]="'info'"
+					[text]="noDataText | translate"></companypre-message>
+			</div>
+		</div>
+	</div>
+</div>

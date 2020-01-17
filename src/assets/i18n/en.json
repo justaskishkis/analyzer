@@ -1,0 +1,20 @@
+{
+	"form.message.field-is-invalid": "Field is invalid",
+	"form.message.required-field": "Field is required",
+	"header.heading.your-favorite-analyzer-application": "Your favorite analyzer application",
+	"scrape-website.button.scrape": "Scrape!",
+	"scrape-website.heading.history": "Website Scraped Before",
+	"scrape-website.heading.longest-path-or-paths-from-root": "Longest path or paths from root",
+	"scrape-website.heading.longest-path-or-paths-from-root-with-most-popular": "Longest path or paths from root with most popular tag",
+	"scrape-website.heading.most-used-tag": "Most used tag or tags",
+	"scrape-website.heading.unique-tag-list": "Unique tag list",
+	"scrape-website.label.website-url": "Website url",
+	"scrape-website.message.no-websites-scraped-yet": "No websites scraped yet!:)",
+	"message.no-data": "No data.",
+	"title.total": "Total:",
+	"title.times-used": "Times used:",
+	"title.count": "Count:",
+	"title.length": "Length:",
+	"message.error.only-http-scraping-is-supported-in-this-version": "Only valid http url scraping is supported in this version",
+	"message.error.server-error": "Ooops.. something went wrong:)"
+}

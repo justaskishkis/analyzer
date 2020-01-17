@@ -1,0 +1,16 @@
+@require 'base-config'
+
+.{cPre}card
+	border 2px dotted bdcInputPrimary
+	min-height 84px
+	box-sizing border-box
+	padding_(spaceTopLg spaceRightLg spaceBottomLg spaceLeftLg)
+	position_(relative, null null null null)
+	z-index zLow1
+
+	&__total
+		position_(absolute, 0 0 null null)
+		z-index zLow1
+		padding_(spaceTopSm spaceRightSm spaceBottomSm spaceLeftSm)
+		border-bottom 2px dotted bdcInputPrimary
+		border-left 2px dotted bdcInputPrimary

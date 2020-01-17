@@ -1,0 +1,33 @@
+<div class="companypre-example-area">
+	<form
+		autocomplete="off"
+		[formGroup]="form"
+		(ngSubmit)="submit()">
+		<companypre-form-group>
+			<companypre-form-field
+				[label]="'First name'"
+				[required]="true">
+				<input
+					type="text"
+					formControlName="firstName"
+					companypre-form-control />
+			</companypre-form-field>
+			<companypre-form-field
+				[label]="'Last name'">
+				<input
+					type="text"
+					formControlName="lastName"
+					companypre-form-control />
+			</companypre-form-field>
+			<companypre-form-actions>
+				<button
+					type="submit"
+					companypre-button
+					[styleType]="'primary'"
+					(click)="submit()">
+					Save
+				</button>
+			</companypre-form-actions>
+		</companypre-form-group>
+	</form>
+</div>

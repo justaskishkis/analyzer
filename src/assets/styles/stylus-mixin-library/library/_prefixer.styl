@@ -1,0 +1,9 @@
+prefixer_($property, $value, $vendorPrefixListOverride = $vendorPrefixList)
+	if $vendorPrefixListOverride
+		for $vendor in $vendorPrefixListOverride
+			-{$vendor}-{$property} $value
+		{$property} $value
+	else
+		for $vendor in $vendorPrefixList
+			-{$vendor}-{$property} $value
+		{$property} $value

@@ -1,0 +1,20 @@
+// VAR
+assetsPath = './assets/'
+stylesPath = assetsPath + 'styles/'
+mixinLibraryPath = stylesPath + 'stylus-mixin-library/'
+themePath = stylesPath + 'theme/'
+cssResetPath = stylesPath + 'css-reset/'
+gridPath = stylesPath + 'grid/'
+vendorPath = stylesPath + 'vendor/'
+imagesPath = assetsPath + 'images/'
+
+// REQUIRE
+@require mixinLibraryPath + '_index'
+@require themePath + '_index'
+@require cssResetPath + '_index'
+@require gridPath + '_index'
+// @require vendorPath + '_index'
+
+html, body
+	margin_(0 0 0 0)
+	height 100%

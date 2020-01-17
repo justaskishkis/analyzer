@@ -1,0 +1,43 @@
+.{pre}grid-container
+	max-width 100%
+	box-sizing border-box
+	margin_(null auto null auto)
+
+	@media screen and (min-width tablet)
+		max-width 720px
+
+	@media screen and (min-width desktop)
+		max-width 960px
+
+	@media screen and (min-width wideScreen)
+		max-width 1140px
+
+	&--full-width
+		width 100% !important
+		max-width 100% !important
+
+	&--tablet-full-width
+		@media screen and (min-width tablet)
+			width 100% !important
+			max-width 100% !important
+
+	&--desktop-full-width
+		@media screen and (min-width desktop)
+			width 100% !important
+			max-width 100% !important
+
+	&--wide-screen-full-width
+		@media screen and (min-width wideScreen)
+			width 100% !important
+			max-width 100% !important
+
+	&--horizontal-spaces-primary
+		padding_(null spaceRightPrimary null spaceLeftPrimary)
+
+		> .{pre}grid-row
+			width unquote('100%' + spaceRightPrimary + spaceLeftPrimary)
+			margin-right unquote('-' + spaceRightPrimary)
+			margin-left unquote('-' + spaceLeftPrimary)
+
+			> .{pre}grid-col
+				padding_(null spaceRightPrimary null spaceLeftPrimary)

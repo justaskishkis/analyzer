@@ -1,0 +1,13 @@
+<div class="companypre-example-area">
+	<ul>
+		<li *ngFor="let styleType of styleTypes">
+			<button
+				type="button"
+				companypre-button
+				[styleType]="styleType"
+				[disabled]="disabled">
+				{{ styleType | titlecase }}
+			</button>
+		</li>
+	</ul>
+</div>

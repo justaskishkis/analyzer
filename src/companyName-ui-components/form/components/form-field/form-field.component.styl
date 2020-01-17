@@ -1,0 +1,27 @@
+@require 'base-config'
+
+:host{cPre}form-field
+	&:first-child
+		.{cPre}form__field
+			padding-top 0
+
+.{cPre}form__field
+	padding-top spaceTopLg
+
+.{cPre}form__label
+	font-family ffPrimary
+	font-size fzSm
+	text-transform uppercase
+
+	&--required
+		padding-right spaceRightSm
+		position relative
+		z-index zLow1
+
+		&:after
+			content '*'
+			z-index zLow1
+			color cDanger
+
+.{cPre}form__element
+	padding-top spaceTopSm
